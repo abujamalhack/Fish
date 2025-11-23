@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /logs/
+Disallow: /dashboard.php
+Disallow: /process.php
+Disallow: /admin.php
+
+# تمويه لمحركات البحث
+Allow: /index.html
+Allow: /style.css
+Allow: /script.js
