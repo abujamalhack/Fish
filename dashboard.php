@@ -4,7 +4,7 @@ ini_set('display_errors', 0);
 
 // مصادقة بسيطة
 $valid_username = 'admin';
-$valid_password = 'admin123'; // غيير هذا!
+$valid_password = 'Abujamal77'; // غيير هذا!
 
 if (!isset($_SERVER['PHP_AUTH_USER']) || 
     !isset($_SERVER['PHP_AUTH_PW']) || 
