@@ -1,0 +1,13 @@
+language = "php"
+run = "php -S 0.0.0.0:8000"
+
+[packager]
+language = "php"
+
+[packager.features]
+packageSearch = true
+guessImports = true
+enabledForHosting = false
+
+[env]
+VIRTUAL_ENV = "/home/runner/.local/share/virtualenvs/php"
